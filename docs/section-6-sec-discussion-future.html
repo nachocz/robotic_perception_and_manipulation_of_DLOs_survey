@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6. Discussion and Future Directions — Robotic Perception and Manipulation of Deformable Linear Objects: A Survey</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Top navigation bar -->
+<nav class="top-nav" id="topNav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-title">DLO Survey</a>
+        <div class="nav-section-select">
+            <select id="sectionSelect" onchange="if(this.value) window.location.href=this.value;">
+                <option value="index.html">Home</option>
+<option value="section-1-introduction.html">1. Introduction</option>
+<option value="section-2-sec-modeling.html">2. Modeling</option>
+<option value="section-3-sec-perception.html">3. Perception</option>
+<option value="section-4-sec-estimation-control-planning.html">4. Estimation, Control and Planning for DLO Manipulation</option>
+<option value="section-5-sec-manipulation-new.html">5. Manipulation Tasks</option>
+<option value="section-6-sec-discussion-future.html" selected>6. Discussion and Future Directions</option>
+<option value="section-7-sec-conclusions.html">7. Conclusions</option>
+<option value="references.html">References</option>
+            </select>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="references.html">References</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero / Paper header (only on index page) -->
+<header class="hero hidden">
+    <div class="hero-inner">
+        <p class="hero-journal">International Journal of Robotics Research (IJRR) · 2025</p>
+        <h1 class="hero-title">Robotic Perception and Manipulation of Deformable Linear Objects: A Survey</h1>
+        <p class="hero-authors">Alessio Caporali<sup>1</sup>, Ignacio Cuiral-Zueco<sup>2</sup>, Gonzalo López-Nicolás<sup>3</sup>, Gianluca Palli<sup>1</sup></p>
+        <p class="hero-affiliations"><sup>1</sup>University of Bologna, Department of Electrical, Electronic and Information Engineering, Viale Risorgimento 2, 40136 Bologna, Italy.<br><sup>2</sup> Université Clermont Auvergne, CNRS, Clermont Auvergne INP, Institut Pascal, F-63000 Clermont-Ferrand, France.<br><sup>3</sup>Instituto de Investigación en Ingeniería de Aragón, Universidad de Zaragoza, 50009 Zaragoza, Spain.</p>
+    </div>
+</header>
+
+<!-- Main layout: sidebar + content -->
+<div class="layout">
+
+    <!-- Sidebar / Table of Contents -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <h3 class="sidebar-title">Contents</h3>
+            <nav class="sidebar-nav" id="toc">
+                <ul class="toc-list"><li class="toc-section "><a href="section-1-introduction.html">1. Introduction</a>
+</li>
+<li class="toc-section "><a href="section-2-sec-modeling.html">2. Modeling</a>
+</li>
+<li class="toc-section "><a href="section-3-sec-perception.html">3. Perception</a>
+</li>
+<li class="toc-section "><a href="section-4-sec-estimation-control-planning.html">4. Estimation, Control and Planning for DLO Manipulation</a>
+</li>
+<li class="toc-section "><a href="section-5-sec-manipulation-new.html">5. Manipulation Tasks</a>
+</li>
+<li class="toc-section active"><a href="section-6-sec-discussion-future.html">6. Discussion and Future Directions</a>
+<ul>
+<li class="toc-subsection"><a href="#sec:discussion_perception">6.1. Advanced DLO Perception</a>
+</li>
+<li class="toc-subsection"><a href="#sec:discussion_manipulation">6.2. Manipulation of DLOs: What's Next</a>
+<ul>
+<li class="toc-subsubsection"><a href="#sec:discussion_manipulation_low_level">6.2.1. Adaptive and Contact-Rich Control in Unstructured Environments.</a></li>
+<li class="toc-subsubsection"><a href="#sec:discussion_manipulation_high_level">6.2.2. Long-Horizon Planning and Foundational Intelligence.</a></li>
+</ul>
+</li>
+<li class="toc-subsection"><a href="#sec:discussion_fault">6.3. Fault Prevention, Detection and Recovery</a>
+</li>
+<li class="toc-subsection"><a href="#sec:data_collection_and_annotation">6.4. Data Collection and Curation Challenges</a>
+</li>
+</ul>
+</li>
+<li class="toc-section "><a href="section-7-sec-conclusions.html">7. Conclusions</a>
+</li></ul>
+            </nav>
+            <div class="sidebar-refs">
+                <a href="references.html" class="sidebar-refs-link">References</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="content">
+        <section class="section-content"><h2 id="sec:discussion_future" class="section-heading"><span class="sec-num">6</span> Discussion and Future Directions</h2>
+<div class="section-body"><p>Current DLO manipulation methods still struggle with generalization and robustness in the real world. For example, <em>shaping</em> techniques often assume contact-free environments, ignoring the elastoplastic behavior of real DLOs like electrical cables, and skip formal reachability analysis.<em>Routing</em> approaches frequently depend on task-specific motion primitives and are restricted to quasi-static, mostly planar environments, overlooking the complexities of clip-based interactions and long-term mechanical stress on the DLO. <em>Topological manipulation</em> is still dominated by passive visual perception, which performs poorly in the presence of dense entanglements and tight knots, resulting in frequent grasping failures and limited robustness. Most <em>suturing</em> approaches target isolated sub-tasks without offering robust end-to-end pipelines capable of managing tissue deformation, occlusions, and surface motion throughout the full procedure. Lastly, in <em>transport</em>, methods are typically validated in structured indoor settings and often assume pre-attached payloads, which limits their adaptability to outdoor or dynamic contexts.</p><p>Together, these limitations highlight the need for future research to address challenges across multiple fronts: advanced perception (<a href="#sec:discussion_perception" class="secref">Sec.&nbsp;6.1</a>), high-level and low-level manipulation strategies (<a href="#sec:discussion_manipulation" class="secref">Sec.&nbsp;6.2</a>), robust failure detection and recovery (<a href="#sec:discussion_fault" class="secref">Sec.&nbsp;6.3</a>), and scalable data collection and curation (<a href="#sec:data_collection_and_annotation" class="secref">Sec.&nbsp;6.4</a>). This broader perspective on next-generation DLO manipulation is reflected in the framework illustrated in <a href="#fig:future_work_chart" class="figref">Fig.&nbsp;17</a>, which is intended as a guiding example rather than an exhaustive architectural specification.</p>
+<figure class="survey-figure" id="fig:future_work_chart">
+<img src="img/fig_17.jpg" alt="Illustrative full-system framework for next-generation DLO manipulation" loading="lazy">
+<figcaption><strong>Figure 17.</strong> <strong>An illustrative full-system framework that addresses some of the most critical challenges in next-generation DLO manipulation.</strong> This flowchart outlines a system capable of handling unstructured, real-world complex DLO manipulation tasks. It links scalable DLO data-generation pipelines (<a href="#sec:data_collection_and_annotation" class="secref">Sec.&nbsp;6.4</a>) directly to real-time online manipulation strategies. The runtime loop fuses advanced perception (<a href="#sec:discussion_perception" class="secref">Sec.&nbsp;6.1</a>) with hierarchical manipulation strategies (<a href="#sec:discussion_manipulation" class="secref">Sec.&nbsp;6.2</a>), integrating high-level semantic and long-horizon planning (<a href="#sec:discussion_manipulation_high_level" class="secref">Sec.&nbsp;6.2.2</a>) with contact-rich, affordance-aware control (<a href="#sec:discussion_manipulation_low_level" class="secref">Sec.&nbsp;6.2.1</a>). The framework explicitly includes fault prevention, detection, and recovery (<a href="#sec:discussion_fault" class="secref">Sec.&nbsp;6.3</a>) as a critical requirement for transferring DLO manipulation research to real-world applications.</figcaption>
+</figure></div>
+<h3 id="sec:discussion_perception" class="section-heading"><span class="sec-num">6.1</span> Advanced DLO Perception</h3>
+<div class="section-body"><p>Reliable DLO manipulation increasingly requires force, tactile, and proprioceptive feedback. Vision alone struggles with real-world lighting, reflections, occlusions, and the visually uniform, thin nature of many DLOs.
+Even in human manipulation, vision mainly guides initial grasp selection, while successful handling depends on touch, force feedback, and purposeful physical interaction. 
+Interactive perception (<a href="references.html#ref-bohg2017interactive" class="citation" title="Interactive perception: Leveraging action in perception and perception in action">Bohg et al., 2017</a>; <a href="references.html#ref-weng2024interactive" class="citation" title="Interactive perception for deformable object manipulation">Weng et al., 2024</a>), where the robot actively probes and manipulates the object to gain information, naturally complements passive sensing and enhances robustness. Additionally, advances in sensorless and tactile strategies, such as those proposed in (<a href="references.html#ref-monguzzi2023tactile" class="citation" title="Tactile based robotic skills for cable routing operations">Monguzzi et al., 2023</a>; <a href="references.html#ref-monguzzi2024sensorless" class="citation" title="Sensorless robotized cable contour following and connector detection">Monguzzi et al., 2024</a>), offer a promising path toward reliable, application-ready systems.
+While vision remains essential for grasp planning and state estimation, physical interaction sensing is a requisite for true application-ready systems.</p><p>Another issue is temporal resolution. Most methods reviewed here operate at low frequencies, restricting them to quasi-static tasks.
+Interestingly, this is also reflected in the manipulation tasks, usually exploiting quasi-static settings (see <a href="#sec:discussion_manipulation" class="secref">Sec.&nbsp;6.2</a>).
+Higher processing rates could simplify perception by minimizing inter-frame visual changes and enable dynamic manipulation. This requires optimizing current architectures or adopting new data sources, such as event cameras or reduced-order observers from force data.</p><p>Finally, DLO perception is usually task-specific, diverging from conventional setups that rely on large, general-purpose public datasets, like ImageNet (<a href="references.html#ref-deng2009imagenet" class="citation" title="Imagenet: A large-scale hierarchical image database">Deng et al., 2009</a>). Foundation Models, pre-trained on extensive and diverse datasets, are increasingly being applied to robotic tasks (<a href="references.html#ref-firoozi2025foundation" class="citation" title="Foundation models in robotics: Applications, challenges, and the future">Firoozi et al., 2025</a>).
+Their influence is now beginning to extend to DLO perception as well, for example through text-driven segmentation (<a href="references.html#ref-sun2023robust" class="citation" title="A Robust Deformable Linear Object Perception Pipeline in 3D: From Segmentation to Reconstruction">Sun et al., 2024</a>) or the digital-twin reconstruction pipeline proposed in (<a href="references.html#ref-jiang2025phystwin" class="citation" title="PhysTwin: Physics-informed reconstruction and simulation of deformable objects from videos">Jiang et al., 2025</a>). The latter provides a compelling demonstration of foundation models-based DLO perception, reconstructing a physically accurate, simulation-ready digital twin of a real rope from sparse RGB-D video using pretrained foundation models in zero-shot settings.
+However, the object is intentionally thick, which simplifies 3D perception of DLOs and also mitigates the difficulty of current foundation models when dealing with DLO-like thin objects, e.g. under-representation in internet-scale data and difficulty with small-scale and thin details.
+Despite these limitations, research in this direction can substantially advance DLO perception by reducing reliance on task-specific data collection and manual annotation. Indeed, the strong generalization capabilities of foundation models can help bridge the real-world DLO variability gap and improve the robustness and adaptability of future DLO perception systems.</p></div>
+<h3 id="sec:discussion_manipulation" class="section-heading"><span class="sec-num">6.2</span> Manipulation of DLOs: What's Next</h3>
+<h4 id="sec:discussion_manipulation_low_level" class="section-heading"><span class="sec-num">6.2.1</span> Adaptive and Contact-Rich Control in Unstructured Environments.</h4>
+<div class="section-body"><p>To move beyond quasi-static, fixed-grasp setups, the field must tackle contact-rich interactions like slippage, regrasping, and environmental friction. A critical barrier is the accurate modeling of hybrid stick-slip transitions. While recent soft robotics research has progressed by incorporating contact constraints into analytical models like Cosserat rods (<a href="references.html#ref-wiese2023describing" class="citation" title="Describing and analyzing mechanical contact for continuum robots using a shooting-based cosserat rod implementation">Wiese et al., 2023</a>; <a href="references.html#ref-jilani2025quasi" class="citation" title="Quasi-Static Cosserat Rods in Contact With Implicit Surfaces">Jilani et al., 2025</a>), these high-fidelity formulations remain inherently nonlinear and computationally intensive, often limiting their utility for robust, real-time control.</p><p>Data-driven nonlinear control offers a faster alternative. Techniques like the Koopman Operator and Dynamic Mode Decomposition with control (DMDc) (<a href="references.html#ref-brunton2016discovering" class="citation" title="Discovering governing equations from data by sparse identification of nonlinear dynamical systems">Brunton et al., 2016</a>; <a href="references.html#ref-kaiser2021data" class="citation" title="Data-driven discovery of Koopman eigenfunctions for control">Kaiser et al., 2021</a>; <a href="references.html#ref-kaiser2018sparse" class="citation" title="Sparse identification of nonlinear dynamics for model predictive control in the low-data limit">Kaiser et al., 2018</a>) can map complex DLO dynamics into linear observable spaces. Paired with Nonlinear Model Predictive Control (NMPC) (<a href="references.html#ref-korda2020koopman" class="citation" title="Koopman model predictive control of nonlinear dynamical systems">Korda and Mezić, 2020</a>; <a href="references.html#ref-folkestad2021koopman" class="citation" title="Koopman NMPC: Koopman-based learning and nonlinear model predictive control of control-affine systems">Folkestad and Burdick, 2021</a>), these methods can manage high-dimensional DLO systems at industrial speeds.</p><p>In unstructured environments, however, physical properties are often unknown. Active learning and ergodic exploration (<a href="references.html#ref-abraham2021ergodic" class="citation" title="An ergodic measure for active learning from equilibrium">Abraham et al., 2021</a>; <a href="references.html#ref-saviolo2023active" class="citation" title="Active learning of discrete-time dynamics for uncertainty-aware model predictive control">Saviolo et al., 2023</a>) allow the system to autonomously probe the object, gauging stiffness or friction. This active data gathering enables online adjustments, such as controlled sliding or regrasping.</p><p>Validating these complex behaviors requires standardized hardware benchmarks like the (<a href="references.html#ref-nist" class="citation" title="Assembly Performance Metrics and Test Methods">NIST, 2025</a>) task boards (<a href="references.html#ref-luo2025precise" class="citation" title="Precise and dexterous robotic manipulation via human-in-the-loop reinforcement learning">Luo et al., 2025</a>; <a href="references.html#ref-qi2026llm" class="citation" title="LLM-driven symbolic planning and hierarchical imitation learning for long-horizon deformable object assembly">Qi et al., 2026</a>) and shift from binary success criteria to continuous performance metrics (<a href="references.html#ref-laezza2021reform" class="citation" title="Reform: A robot learning sandbox for deformable linear object manipulation">Laezza et al., 2021</a>).</p><p>Lastly, human-robot collaboration with DLOs (<a href="references.html#ref-zhou2024reactive" class="citation" title="Reactive human–robot collaborative manipulation of deformable linear objects using a new topological latent control model">Zhou et al., 2024</a>) demands dexterity that quasi-static methods cannot provide. Adapting to human movements requires the robot to safely slip, regrasp (<a href="references.html#ref-zhaole2024dexdlo" class="citation" title="Dexdlo: Learning goal-conditioned dexterous policy for dynamic manipulation of deformable linear objects">Zhaole et al., 2024</a>), and manage varying grasp orientations (<a href="references.html#ref-yu2024inhand" class="citation" title="In-Hand Following of Deformable Linear Objects Using Dexterous Fingers with Tactile Sensing">Yu et al., 2024</a>).</p></div>
+<h4 id="sec:discussion_manipulation_high_level" class="section-heading"><span class="sec-num">6.2.2</span> Long-Horizon Planning and Foundational Intelligence.</h4>
+<div class="section-body"><p>Complex DLO tasks require reasoning that inter-relate high-level semantic understanding with low-level physical interactions. While vision-language-action (VLA) models like \(\pi_0\) (<a href="references.html#ref-black2024pi0" class="citation" title="$_0$: A Vision-Language-Action Flow Model for General Robot Control">Black et al., 2024</a>) and RT-2 (<a href="references.html#ref-zitkovich2023rt2" class="citation" title="Rt-2: Vision-language-action models transfer web knowledge to robotic control">Zitkovich et al., 2023</a>) are promising, their precision in DLO manipulation is unproven. A safer approach decouples reasoning from execution (<a href="references.html#ref-qi2026llm" class="citation" title="LLM-driven symbolic planning and hierarchical imitation learning for long-horizon deformable object assembly">Qi et al., 2026</a>): Large Language Models (LLMs) generate symbolic sub-goals (e.g., &quot;grasp the cable end&quot;), which physics-aware planners then execute.</p><p>Validating these symbolic plans requires accurate deformation modeling to cross the sim-to-real gap. Physics-informed methods like PhysTwin (<a href="references.html#ref-jiang2025phystwin" class="citation" title="PhysTwin: Physics-informed reconstruction and simulation of deformable objects from videos">Jiang et al., 2025</a>) and Particle-Grid Neural Dynamics (<a href="references.html#ref-zhang2025particlegrid" class="citation" title="Particle-Grid neural dynamics for learning deformable object models from RGB-D videos">Zhang et al., 2025</a>) learn deformable physics directly from RGB-D video. By building simulation-ready digital twins, these methods let planners verify long-horizon sequences using real-world physics priors instead of manually tuned simulators (<a href="references.html#ref-xiang2025structured" class="citation" title="Structured 3D latents for scalable and versatile 3D generation">Xiang et al., 2025</a>).</p><p>Finally, executing these plans requires policies that handle complex, multimodal actions. Diffusion policies (<a href="references.html#ref-chi2025diffusion" class="citation" title="Diffusion policy: Visuomotor policy learning via action diffusion">Chi et al., 2025</a>) are highly effective here, but their success depends on in-domain data. The scarcity of datasets capturing the full physical state-space of DLOs remains a severe bottleneck (see <a href="#sec:data_collection_and_annotation" class="secref">Sec.&nbsp;6.4</a>).</p></div>
+<h3 id="sec:discussion_fault" class="section-heading"><span class="sec-num">6.3</span> Fault Prevention, Detection and Recovery</h3>
+<div class="section-body"><p>For real-world deployment, fault detection and recovery must be a core system capability, not an afterthought. Research should start by establishing a fault ontology for DLOs, categorizing failures across perception (occlusion, tracking loss), grasping (slippage), control (instability), and modeling (parameter mismatch). Some work has begun here: (<a href="references.html#ref-mitrano2021learning" class="citation" title="Learning where to trust unreliable models in an unstructured world for deformable object manipulation">Mitrano et al., 2021</a>) predicts the reliability of learned DLO models, and (<a href="references.html#ref-sundaresan2021untangling" class="citation" title="Untangling dense non-planar knots by learning manipulation features and recovery policies">Sundaresan et al., 2021</a>) provides recovery strategies for tangled DLOs.</p><p>Because learning-based methods struggle with out-of-distribution events, integrating uncertainty estimation (<a href="references.html#ref-amini2020deep" class="citation" title="Deep evidential regression">Amini et al., 2020</a>; <a href="references.html#ref-kendall2017uncertainties" class="citation" title="What uncertainties do we need in bayesian deep learning for computer vision?">Kendall and Gal, 2017</a>) is vital for detecting impending failures. Similarly, during online adaptation, incorporating ergodic exploration from equilibrium with stability guarantees (<a href="references.html#ref-abraham2021ergodic" class="citation" title="An ergodic measure for active learning from equilibrium">Abraham et al., 2021</a>) can actively enhance failure avoidance during system exploration.</p><p>Developing dynamic primitives for fault recovery is another critical area. Humans resolve tangles using dynamic motions like impulsive pulls or whipping. While some primitive-based untangling exists (<a href="references.html#ref-zhang2022learning" class="citation" title="Learning efficient policies for picking entangled wire harnesses: An approach to industrial bin picking">Zhang et al., 2022</a>), formalizing these into a taxonomy would give supervisors (like VLMs in the RACER framework (<a href="references.html#ref-dai2025racer" class="citation" title="RACER: Rich language-guided failure recovery policies for imitation learning">Dai et al., 2025</a>)) the vocabulary to command complex, high-frequency maneuvers to fix entanglements. Multi-robot strategies (<a href="references.html#ref-herguedas2019survey" class="citation" title="Survey on multi-robot manipulation of deformable objects">Herguedas et al., 2019</a>; <a href="references.html#ref-aranda2025distributed" class="citation" title="Distributed Control of Flexible Chained Multiagent Formations">Aranda et al., 2025</a>) can also mitigate local failures, using physical cues (like tension along a cable) to coordinate recovery when communication is poor.</p></div>
+<h3 id="sec:data_collection_and_annotation" class="section-heading"><span class="sec-num">6.4</span> Data Collection and Curation Challenges</h3>
+<div class="section-body"><p>Recent advances in imitation learning, particularly using Diffusion policies (<a href="references.html#ref-chi2025diffusion" class="citation" title="Diffusion policy: Visuomotor policy learning via action diffusion">Chi et al., 2025</a>), have shown that model-free approaches can master complex skills with relatively few demonstrations. Teleoperation frameworks like ALOHA (<a href="references.html#ref-zhao2024aloha" class="citation" title="ALOHA unleashed: A simple recipe for robot dexterity">Zhao et al., 2025</a>; <a href="references.html#ref-zhao-rss-23" class="citation" title="Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware">Tony Z. Zhao AND Vikash Kumar AND Sergey Levine AND Chelsea Finn, 2023</a>) can enable the learning of precise DLO-related tasks—such as cable routing or shoe lacing—given sufficient demonstrations.
+Complementing these hardware-intensive approaches, the Universal Manipulation Interface (UMI) provides a scalable alternative by leveraging in-the-wild human demonstrations through hand-held grippers (<a href="references.html#ref-chi2024universal" class="citation" title="Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots">Chi et al., 2024</a>). Further reducing hardware requirements, human video-based learning methods directly translate RGB-D videos into robot supervision (<a href="references.html#ref-lepert2025phantom" class="citation" title="Phantom: Training Robots Without Robots Using Only Human Videos">Marion Lepert et al., 2025</a>). However, a critical bias limits the utility of these general-purpose data-collection pipelines. Since large-scale datasets naturally lean toward conventional, <em>easy-to-record</em> scenarios, it systematically underrepresents challenging environments (such as underwater cable inspection or highly congested DMLO routing) precisely where automation offers great value. As a result, these models often fail to generalize to DLOs with different physical properties, necessitating ad-hoc data collection for new materials or environmental variations.</p><p>One of the main causes of this poor generalization is that DLO dynamics are governed by latent physical properties (such as stiffness and friction) that are often visually imperceptible. To enable robust generalization, data collection must pivot toward <em>multimodal</em> pipelines, synchronizing visual kinematics with high-frequency force and tactile feedback to resolve these invisible parameters. Novel hardware approaches, such as sensorized hydrogels (<a href="references.html#ref-hardman20213d" class="citation" title="3D printable sensorized soft gelatin hydrogel for multi-material soft structures">Hardman et al., 2021</a>), offer a promising avenue for dataset generation by directly capturing mechanical deformation both internally and at the contact surface of the DLO. Alternatively, emerging foundation models address the physical annotation bottleneck computationally. By combining dense point tracking from models like CoTracker3 (<a href="references.html#ref-karaev2024cotracker3" class="citation" title="CoTracker3: Simpler and better point tracking by pseudolabelling real videos">Karaev et al., 2024</a>) with physically-informed pipelines like PhysTwin (<a href="references.html#ref-jiang2025phystwin" class="citation" title="PhysTwin: Physics-informed reconstruction and simulation of deformable objects from videos">Jiang et al., 2025</a>), it becomes possible to semi-automate labeling <em>in the wild</em>, effectively creating valid generators for dense, physics-informed datasets.</p><p>Finally, current datasets suffer from a ``success bias,&#x27;&#x27; as they consist almost exclusively of smooth expert demonstrations. Robust DLO manipulation, however, requires recovering from inherent instability and failure modes like snagging or entanglement. Because experts naturally avoid these errors, models trained on such data lack the support to handle out-of-distribution failures. Future datasets must therefore explicitly include <em>failure and recovery trajectories</em>, teaching the policy not only the nominal path but also how to untangle or re-route when the primary strategy fails.</p></div></section>
+
+        <!-- Prev / Next navigation -->
+        <div class="page-nav">
+            <a href="section-5-sec-manipulation-new.html" class="nav-btn prev-btn">← 5. Manipulation Tasks</a>
+            <a href="section-7-sec-conclusions.html" class="nav-btn next-btn">7. Conclusions →</a>
+        </div>
+    </main>
+</div>
+
+<!-- Back to top button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

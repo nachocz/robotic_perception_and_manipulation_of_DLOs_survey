@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotic Perception and Manipulation of Deformable Linear Objects: A Survey</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Top navigation bar -->
+<nav class="top-nav" id="topNav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-title">DLO Survey</a>
+        <div class="nav-section-select">
+            <select id="sectionSelect" onchange="if(this.value) window.location.href=this.value;">
+                <option value="index.html" selected>Home</option>
+<option value="section-1-introduction.html">1. Introduction</option>
+<option value="section-2-sec-modeling.html">2. Modeling</option>
+<option value="section-3-sec-perception.html">3. Perception</option>
+<option value="section-4-sec-estimation-control-planning.html">4. Estimation, Control and Planning for DLO Manipulation</option>
+<option value="section-5-sec-manipulation-new.html">5. Manipulation Tasks</option>
+<option value="section-6-sec-discussion-future.html">6. Discussion and Future Directions</option>
+<option value="section-7-sec-conclusions.html">7. Conclusions</option>
+<option value="references.html">References</option>
+            </select>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="references.html">References</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero / Paper header (only on index page) -->
+<header class="hero visible">
+    <div class="hero-inner">
+        <p class="hero-journal">International Journal of Robotics Research (IJRR) · 2025</p>
+        <h1 class="hero-title">Robotic Perception and Manipulation of Deformable Linear Objects: A Survey</h1>
+        <p class="hero-authors">Alessio Caporali<sup>1</sup>, Ignacio Cuiral-Zueco<sup>2</sup>, Gonzalo López-Nicolás<sup>3</sup>, Gianluca Palli<sup>1</sup></p>
+        <p class="hero-affiliations"><sup>1</sup>University of Bologna, Department of Electrical, Electronic and Information Engineering, Viale Risorgimento 2, 40136 Bologna, Italy.<br><sup>2</sup> Université Clermont Auvergne, CNRS, Clermont Auvergne INP, Institut Pascal, F-63000 Clermont-Ferrand, France.<br><sup>3</sup>Instituto de Investigación en Ingeniería de Aragón, Universidad de Zaragoza, 50009 Zaragoza, Spain.</p>
+    </div>
+</header>
+
+<!-- Main layout: sidebar + content -->
+<div class="layout">
+
+    <!-- Sidebar / Table of Contents -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <h3 class="sidebar-title">Contents</h3>
+            <nav class="sidebar-nav" id="toc">
+                <ul class="toc-list"><li class="toc-section "><a href="section-1-introduction.html">1. Introduction</a>
+</li>
+<li class="toc-section "><a href="section-2-sec-modeling.html">2. Modeling</a>
+</li>
+<li class="toc-section "><a href="section-3-sec-perception.html">3. Perception</a>
+</li>
+<li class="toc-section "><a href="section-4-sec-estimation-control-planning.html">4. Estimation, Control and Planning for DLO Manipulation</a>
+</li>
+<li class="toc-section "><a href="section-5-sec-manipulation-new.html">5. Manipulation Tasks</a>
+</li>
+<li class="toc-section "><a href="section-6-sec-discussion-future.html">6. Discussion and Future Directions</a>
+</li>
+<li class="toc-section "><a href="section-7-sec-conclusions.html">7. Conclusions</a>
+</li></ul>
+            </nav>
+            <div class="sidebar-refs">
+                <a href="references.html" class="sidebar-refs-link">References</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="content">
+        
+            <section class="abstract-section" id="abstract">
+                <h2 class="section-heading">Abstract</h2>
+                <div class="abstract-text">Deformable Linear Objects (DLOs) are widely encountered in everyday life, taking forms such as plastic tubes, wires, ropes, and cables. They are prevalent across diverse settings, including industrial, domestic, and medical environments, as well as in outdoor applications like electric power lines, subaquatic cables, and aerial transport systems. These objects are termed <em>deformable</em> due to their ability to undergo significant shape changes under external forces, and <em>linear</em> because their length vastly exceeds their cross-sectional dimensions.
+Despite their importance and widespread presence, developing robotic systems capable of interacting with DLOs poses numerous challenges.
+This survey presents a comprehensive review of the state-of-the-art methods developed over the past decade to address these challenges. It covers key areas including physical and data-driven modeling techniques, simulation environments, perception approaches based on vision and tactile sensing, as well as strategies for estimation, planning, and control. It also reviews common manipulation tasks such as grasping, shaping, routing, knotting, suturing, and transport. The survey concludes with a critical discussion of current limitations and outlines promising directions for future research.</div>
+            </section>
+            <hr class="section-divider">
+            <section id="overview">
+                <h2 class="section-heading">Sections Overview</h2>
+                <ul class="overview-list"><li><a href="section-1-introduction.html"><strong>Section 1.</strong> Introduction</a></li>
+<li><a href="section-2-sec-modeling.html"><strong>Section 2.</strong> Modeling</a></li>
+<li><a href="section-3-sec-perception.html"><strong>Section 3.</strong> Perception</a></li>
+<li><a href="section-4-sec-estimation-control-planning.html"><strong>Section 4.</strong> Estimation, Control and Planning for DLO Manipulation</a></li>
+<li><a href="section-5-sec-manipulation-new.html"><strong>Section 5.</strong> Manipulation Tasks</a></li>
+<li><a href="section-6-sec-discussion-future.html"><strong>Section 6.</strong> Discussion and Future Directions</a></li>
+<li><a href="section-7-sec-conclusions.html"><strong>Section 7.</strong> Conclusions</a></li></ul>
+            </section>
+        
+
+        <!-- Prev / Next navigation -->
+        <div class="page-nav">
+            
+            <a href="section-1-introduction.html" class="nav-btn next-btn">Next: 1. Introduction →</a>
+        </div>
+    </main>
+</div>
+
+<!-- Back to top button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

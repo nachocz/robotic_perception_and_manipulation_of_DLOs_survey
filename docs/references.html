@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References — Robotic Perception and Manipulation of Deformable Linear Objects: A Survey</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Top navigation bar -->
+<nav class="top-nav" id="topNav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-title">DLO Survey</a>
+        <div class="nav-section-select">
+            <select id="sectionSelect" onchange="if(this.value) window.location.href=this.value;">
+                <option value="index.html">Home</option>
+<option value="section-1-introduction.html">1. Introduction</option>
+<option value="section-2-sec-modeling.html">2. Modeling</option>
+<option value="section-3-sec-perception.html">3. Perception</option>
+<option value="section-4-sec-estimation-control-planning.html">4. Estimation, Control and Planning for DLO Manipulation</option>
+<option value="section-5-sec-manipulation-new.html">5. Manipulation Tasks</option>
+<option value="section-6-sec-discussion-future.html">6. Discussion and Future Directions</option>
+<option value="section-7-sec-conclusions.html">7. Conclusions</option>
+<option value="references.html" selected>References</option>
+            </select>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="references.html">References</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero / Paper header (only on index page) -->
+<header class="hero hidden">
+    <div class="hero-inner">
+        <p class="hero-journal">International Journal of Robotics Research (IJRR) · 2025</p>
+        <h1 class="hero-title">Robotic Perception and Manipulation of Deformable Linear Objects: A Survey</h1>
+        <p class="hero-authors">Alessio Caporali<sup>1</sup>, Ignacio Cuiral-Zueco<sup>2</sup>, Gonzalo López-Nicolás<sup>3</sup>, Gianluca Palli<sup>1</sup></p>
+        <p class="hero-affiliations"><sup>1</sup>University of Bologna, Department of Electrical, Electronic and Information Engineering, Viale Risorgimento 2, 40136 Bologna, Italy.<br><sup>2</sup> Université Clermont Auvergne, CNRS, Clermont Auvergne INP, Institut Pascal, F-63000 Clermont-Ferrand, France.<br><sup>3</sup>Instituto de Investigación en Ingeniería de Aragón, Universidad de Zaragoza, 50009 Zaragoza, Spain.</p>
+    </div>
+</header>
+
+<!-- Main layout: sidebar + content -->
+<div class="layout">
+
+    <!-- Sidebar / Table of Contents -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <h3 class="sidebar-title">Contents</h3>
+            <nav class="sidebar-nav" id="toc">
+                <ul class="toc-list"><li class="toc-section "><a href="section-1-introduction.html">1. Introduction</a>
+</li>
+<li class="toc-section "><a href="section-2-sec-modeling.html">2. Modeling</a>
+</li>
+<li class="toc-section "><a href="section-3-sec-perception.html">3. Perception</a>
+</li>
+<li class="toc-section "><a href="section-4-sec-estimation-control-planning.html">4. Estimation, Control and Planning for DLO Manipulation</a>
+</li>
+<li class="toc-section "><a href="section-5-sec-manipulation-new.html">5. Manipulation Tasks</a>
+</li>
+<li class="toc-section "><a href="section-6-sec-discussion-future.html">6. Discussion and Future Directions</a>
+</li>
+<li class="toc-section "><a href="section-7-sec-conclusions.html">7. Conclusions</a>
+</li></ul>
+            </nav>
+            <div class="sidebar-refs">
+                <a href="references.html" class="sidebar-refs-link">References</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="content">
+        
+            <section class="references-section" id="references">
+                <h2 class="section-heading">References (263)</h2>
+                <div class="references-search">
+                    <input type="text" id="refSearch" placeholder="Search references..."
+                           class="ref-search-input">
+                </div>
+                <div class="references-list">
+<p class="reference-entry" id="ref-abraham2021ergodic">Abraham et al.. (2021). "An ergodic measure for active learning from equilibrium". <em>IEEE Transactions on Automation Science and Engineering</em>. vol. 18, pp. 917–931.</p>
+<p class="reference-entry" id="ref-achanta2012slic">Achanta et al.. (2012). "SLIC superpixels compared to state-of-the-art superpixel methods". <em>IEEE transactions on pattern analysis and machine intelligence</em>. vol. 34, pp. 2274–2282.</p>
+<p class="reference-entry" id="ref-aghajanzadeh2022offline">Aghajanzadeh et al.. (2022). "An offline geometric model for controlling the shape of elastic linear objects". <em>2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-aghajanzadeh2022optimal">Aghajanzadeh et al.. (2022). "Optimal deformation control framework for elastic linear objects". <em>2022 IEEE 18th International Conference on Automation Science and Engineering (CASE)</em>.</p>
+<p class="reference-entry" id="ref-aghajanzadeh2022adaptive">Aghajanzadeh et al.. (2022). "Adaptive deformation control for elastic linear objects". <em>Frontiers in Robotics and AI</em>. vol. 9, pp. 868459.</p>
+<p class="reference-entry" id="ref-almaghout2024robotic">Almaghout et al.. (2024). "Robotic co-manipulation of deformable linear objects for large deformation tasks". <em>Robotics and Autonomous Systems</em>. vol. 175, pp. 104652.</p>
+<p class="reference-entry" id="ref-amini2020deep">Amini et al.. (2020). "Deep evidential regression". <em>Advances in neural information processing systems</em>. vol. 33, pp. 14927–14937.</p>
+<p class="reference-entry" id="ref-antman1972theory">Antman. (1972). "The theory of rods". <em>Linear Theories of Elasticity and Thermoelasticity: Linear and Nonlinear Theories of Rods, Plates, and Shells</em>.</p>
+<p class="reference-entry" id="ref-aranda2025distributed">Aranda et al.. (2025). "Distributed Control of Flexible Chained Multiagent Formations". <em>IEEE Control Systems Letters</em>. vol. 9, pp. 2018-2023.</p>
+<p class="reference-entry" id="ref-arriola2020modeling">Arriola-Rios et al.. (2020). "Modeling of deformable objects for robotic manipulation: A tutorial and review". <em>Frontiers in Robotics and AI</em>. vol. 7, pp. 82.</p>
+<p class="reference-entry" id="ref-artinian2024closed">Artinian et al.. (2024). "Closed-loop shape control of deformable linear objects based on Cosserat model". <em>IEEE Robotics and Automation Letters</em>. vol. 9, pp. 8746-8753.</p>
+<p class="reference-entry" id="ref-azad2023optimal">Azad et al.. (2023). "Optimal Cosserat-based deformation control for robotic manipulation of linear objects". <em>2023 IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM)</em>.</p>
+<p class="reference-entry" id="ref-bender2015position">Bender et al.. (2015). "Position-Based Simulation Methods in Computer Graphics.". <em>Eurographics (tutorials)</em>.</p>
+<p class="reference-entry" id="ref-bensch2024physics">Bensch et al.. (2024). "Physics-Informed Neural Networks for Continuum Robots: Towards Fast Approximation of Static Cosserat Rod Theory". <em>2024 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-berenson2013manipulation">Berenson. (2013). "Manipulation of deformable objects without modeling and simulating deformation". <em>2013 IEEE/RSJ International Conference on Intelligent Robots and Systems</em>.</p>
+<p class="reference-entry" id="ref-black2024pi0">Black et al.. (2024). "$\pi_0$: A Vision-Language-Action Flow Model for General Robot Control". <em>arXiv preprint arXiv:2410.24164</em>.</p>
+<p class="reference-entry" id="ref-bohg2017interactive">Bohg et al.. (2017). "Interactive perception: Leveraging action in perception and perception in action". <em>IEEE Transactions on Robotics</em>. vol. 33, pp. 1273–1291.</p>
+<p class="reference-entry" id="ref-bolya2019yolact">Bolya et al.. (2019). "Yolact: Real-time instance segmentation". <em>Proceedings of the IEEE/CVF international conference on computer vision</em>.</p>
+<p class="reference-entry" id="ref-borgefors1986distance">Borgefors. (1986). "Distance transformations in digital images". <em>Computer vision, graphics, and image processing</em>. vol. 34, pp. 344–371.</p>
+<p class="reference-entry" id="ref-bouaziz2023projective">Bouaziz et al.. (2023). "Projective dynamics: Fusing constraint projections for fast simulation". <em>Seminal Graphics Papers: Pushing the Boundaries, Volume 2</em>.</p>
+<p class="reference-entry" id="ref-bretl2014quasi">Bretl and McCarthy. (2014). "Quasi-static manipulation of a Kirchhoff elastic rod based on a geometric analysis of equilibrium configurations". <em>The International Journal of Robotics Research</em>. vol. 33, pp. 48–68.</p>
+<p class="reference-entry" id="ref-brunton2016discovering">Brunton et al.. (2016). "Discovering governing equations from data by sparse identification of nonlinear dynamical systems". <em>Proceedings of the national academy of sciences</em>. vol. 113, pp. 3932–3937.</p>
+<p class="reference-entry" id="ref-caporali2023weakly">Caporali et al.. (2023). "A weakly supervised semi-automatic image labeling approach for deformable linear objects". <em>IEEE Robotics and Automation Letters</em>. vol. 8, pp. 1013–1020.</p>
+<p class="reference-entry" id="ref-caporali2025robotic">Caporali and Palli. (2025). "Robotic Manipulation of Deformable Linear Objects via Multi-View Model-based Visual Tracking". <em>IEEE/ASME Transactions on Mechatronics</em>. vol. 30, pp. 3966-3977.</p>
+<p class="reference-entry" id="ref-caporali2022ariadne+">Caporali et al.. (2022). "Ariadne+: Deep Learning–Based Augmented Framework for the Instance Segmentation of Wires". <em>IEEE Transactions on Industrial Informatics</em>. vol. 18, pp. 8607–8617.</p>
+<p class="reference-entry" id="ref-caporali2025gnn">Caporali et al.. (2025). "GNN Topology Representation Learning for Deformable Multi-Linear Objects Dual-Arm Robotic Manipulation". <em>IEEE Transactions on Automation Science and Engineering</em>. vol. 22, pp. 14738-14751.</p>
+<p class="reference-entry" id="ref-caporali2023rt">Caporali et al.. (2023). "RT-DLO: Real-Time Deformable Linear Objects Instance Segmentation". <em>IEEE Transactions on Industrial Informatics</em>. vol. 19, pp. 11333–11342.</p>
+<p class="reference-entry" id="ref-caporali2022fastdlo">Caporali et al.. (2022). "FASTDLO: Fast deformable linear objects instance segmentation". <em>IEEE Robotics and Automation Letters</em>. vol. 7, pp. 9075–9082.</p>
+<p class="reference-entry" id="ref-caporali2024dlo">Caporali et al.. (2024). "DLO Perceiver: Grounding Large Language Model for Deformable Linear Objects Perception". <em>IEEE Robotics and Automation Letters</em>. vol. 9, pp. 11385-11392.</p>
+<p class="reference-entry" id="ref-caporali2024deformable">Caporali et al.. (2024). "Deformable Linear Objects Manipulation with Online Model Parameters Estimation". <em>IEEE Robotics and Automation Letters</em>. vol. 9, pp. 2598-2605.</p>
+<p class="reference-entry" id="ref-caporali2023deformable">Caporali et al.. (2023). "Deformable Linear Objects 3D Shape Estimation and Tracking From Multiple 2D Views". <em>IEEE Robotics and Automation Letters</em>. vol. 8, pp. 3852–3859.</p>
+<p class="reference-entry" id="ref-chen2018encoder">Chen et al.. (2018). "Encoder-decoder with atrous separable convolution for semantic image segmentation". <em>Proceedings of the European conference on computer vision (ECCV)</em>.</p>
+<p class="reference-entry" id="ref-chen2024real">Chen et al.. (2024). "Real-time contact state estimation in shape control of deformable linear objects under small environmental constraints". <em>2024 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-chen2021cooperative">Chen et al.. (2021). "Cooperative transportation of a flexible payload using two quadrotors". <em>Journal of Guidance, Control, and Dynamics</em>. vol. 44, pp. 2099–2107.</p>
+<p class="reference-entry" id="ref-chen2023contact">Chen et al.. (2023). "Contact-Aware Shaping and Maintenance of Deformable Linear Objects With Fixtures". <em>2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-chi2024universal">Chi et al.. (2024). "Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots". <em>Proceedings of Robotics: Science and Systems (RSS)</em>.</p>
+<p class="reference-entry" id="ref-chi2019occlusion">Chi and Berenson. (2019). "Occlusion-robust deformable object tracking without physics simulation". <em>2019 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-chi2024iterative">Chi et al.. (2024). "Iterative residual policy: for goal-conditioned dynamic manipulation of deformable objects". <em>The International Journal of Robotics Research</em>. vol. 43, pp. 389–404.</p>
+<p class="reference-entry" id="ref-chi2025diffusion">Chi et al.. (2025). "Diffusion policy: Visuomotor policy learning via action diffusion". <em>The International Journal of Robotics Research</em>. vol. 44, pp. 1684–1704.</p>
+<p class="reference-entry" id="ref-choi2023mbest">Choi et al.. (2023). "mBEST: Realtime Deformable Linear Object Detection Through Minimal Bending Energy Skeleton Pixel Traversals". <em>IEEE Robotics and Automation Letters</em>. vol. 8, pp. 4863-4870. <a href="https://doi.org/10.1109/LRA.2023.3290419" target="_blank" class="ref-link">[DOI]</a></p>
+<p class="reference-entry" id="ref-cirillo2021tactile">Cirillo et al.. (2021). "Tactile sensor data interpretation for estimation of wire features". <em>Electronics</em>. vol. 10, pp. 1458.</p>
+<p class="reference-entry" id="ref-cirillo2021proximity">Cirillo et al.. (2021). "Proximity Sensor for Thin Wire Recognition and Manipulation". <em>Machines</em>. vol. 9, pp. 188.</p>
+<p class="reference-entry" id="ref-cop2021new">Cop et al.. (2021). "New metrics for industrial depth sensors evaluation for precise robotic applications". <em>2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-cui2022coupled">Cui et al.. (2022). "Coupled multiple dynamic movement primitives generalization for deformable object manipulation". <em>IEEE Robotics and Automation Letters</em>. vol. 7, pp. 5381–5388.</p>
+<p class="reference-entry" id="ref-cuiral2023contour">Cuiral-Zueco et al.. (2023). "Contour based object-compliant shape control". <em>IEEE Robotics and Automation Letters</em>. vol. 8, pp. 5164–5171.</p>
+<p class="reference-entry" id="ref-taxonomy2024shape">Cuiral-Zueco and López-Nicolás. (2024). "Taxonomy of Deformable Object Shape Control". <em>IEEE Robotics and Automation Letters</em>. vol. 9, pp. 9015-9022. <a href="https://doi.org/10.1109/LRA.2024.3455770" target="_blank" class="ref-link">[DOI]</a></p>
+<p class="reference-entry" id="ref-cuiral2025timeconsistent">Cuiral-Zueco and López-Nicolás. (2025). "Time Consistent Surface Mapping for Deformable Object Shape Control". <em>IEEE Transactions on Automation Science and Engineering</em>. vol. 22, pp. 11099-11111.</p>
+<p class="reference-entry" id="ref-cuiralgripper2022">Cuiral-Zueco et al.. (2022). "Gripper positioning for object deformation tasks". <em>2022 International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-dai2025racer">Dai et al.. (2025). "{RACER}: Rich language-guided failure recovery policies for imitation learning". <em>2025 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-dai2022robotic">Dai et al.. (2022). "Robotic manipulation of sperm as a deformable linear object". <em>IEEE Transactions on Robotics</em>. vol. 38, pp. 2799–2811.</p>
+<p class="reference-entry" id="ref-daniel2023multi">Daniel et al.. (2024). "Multi Actor-Critic DDPG for Robot Action Space Decomposition: A Framework to Control Large 3D Deformation of Soft Linear Objects". <em>IEEE Robotics and Automation Letters</em>. vol. 9, pp. 1318-1325.</p>
+<p class="reference-entry" id="ref-de2018let">De Gregorio et al.. (2018). "Let’s take a walk on superpixels graphs: Deformable linear objects segmentation and model estimation". <em>Asian Conference on Computer Vision</em>.</p>
+<p class="reference-entry" id="ref-de2018integration">De Gregorio et al.. (2018). "Integration of robotic vision and tactile sensing for wire-terminal insertion tasks". <em>IEEE Transactions on Automation Science and Engineering</em>. vol. 16, pp. 585–598.</p>
+<p class="reference-entry" id="ref-deng2009imagenet">Deng et al.. (2009). "Imagenet: A large-scale hierarchical image database". <em>2009 IEEE conference on computer vision and pattern recognition</em>.</p>
+<p class="reference-entry" id="ref-dirr2024bin">Dirr et al.. (2024). "Bin picking of deformable linear objects using object-oriented grasp planning". <em>Procedia CIRP</em>. vol. 130, pp. 810–815.</p>
+<p class="reference-entry" id="ref-dirr2023automatic">Dirr et al.. (2023). "Automatic Image Generation Pipeline for Instance Segmentation of Deformable Linear Objects". <em>Sensors</em>. vol. 23, pp. 3013.</p>
+<p class="reference-entry" id="ref-duenser2018interactive">Duenser et al.. (2018). "Interactive robotic manipulation of elastic objects". <em>2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-bulletphysics">Erwin Coumans. (2025). "Bullet Physics SDK: Real-Time Collision Detection and Multi-Physics Simulation".</p>
+<p class="reference-entry" id="ref-estevez2017online">Estevez et al.. (2017). "Online fuzzy modulated adaptive PD control for cooperative aerial transportation of deformable linear objects". <em>Integrated Computer-Aided Engineering</em>. vol. 24, pp. 41–55.</p>
+<p class="reference-entry" id="ref-firoozi2025foundation">Firoozi et al.. (2025). "Foundation models in robotics: Applications, challenges, and the future". <em>The International Journal of Robotics Research</em>. vol. 44, pp. 701–739.</p>
+<p class="reference-entry" id="ref-folkestad2021koopman">Folkestad and Burdick. (2021). "Koopman NMPC: Koopman-based learning and nonlinear model predictive control of control-affine systems". <em>2021 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-fresnillo2023approach">Fresnillo et al.. (2023). "An approach based on machine vision for the identification and shape estimation of deformable linear objects". <em>Mechatronics</em>. vol. 96, pp. 103085.</p>
+<p class="reference-entry" id="ref-malvidofresnillo2024generation">Fresnillo et al.. (2024). "Generation of realistic synthetic cable images to train deep learning segmentation models". <em>Machine Vision and Applications</em>. vol. 35, pp. 84.</p>
+<p class="reference-entry" id="ref-gabellieri2023differential">Gabellieri and Franchi. (2023). "Differential flatness and manipulation of elasto-flexible cables carried by aerial robots in a possibly viscous environment". <em>2023 International Conference on Unmanned Aircraft Systems (ICUAS)</em>.</p>
+<p class="reference-entry" id="ref-galassi2021robotic">Galassi and Palli. (2021). "Robotic wires manipulation for switchgear cabling and wiring harness manufacturing". <em>2021 4th IEEE International Conference on Industrial Cyber-Physical Systems (ICPS)</em>.</p>
+<p class="reference-entry" id="ref-gazzola2018forward">Gazzola et al.. (2018). "Forward and inverse problems in the mechanics of soft filaments". <em>Royal Society open science</em>. vol. 5, pp. 171628.</p>
+<p class="reference-entry" id="ref-ge2014non">Ge et al.. (2014). "Non-rigid point set registration with global-local topology preservation". <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshops</em>.</p>
+<p class="reference-entry" id="ref-golestaneh2024scalable">Golestaneh et al.. (2024). "Scalable Optimal Motion Planning for Multi-Agent Systems by Cosserat Theory of Rods". <em>IEEE Control Systems Letters</em>. vol. 8, pp. 1391–1396.</p>
+<p class="reference-entry" id="ref-govoni2025performance">Govoni et al.. (2025). "Performance Analysis of a Mass-Spring-Damper Deformable Linear Object Model in Robotic Simulation Frameworks". <em>European Robotics Forum</em>.</p>
+<p class="reference-entry" id="ref-grannen2020untangling">Grannen et al.. (2021). "Untangling Dense Knots by Learning Task-Relevant Keypoints". <em>Conference on Robot Learning (CoRL)</em>.</p>
+<p class="reference-entry" id="ref-gu2025learning">Gu et al.. (2025). "Learning Graph Dynamics with Interaction Effects Propagation for Deformable Linear Objects Shape Control". <em>IEEE Transactions on Automation Science and Engineering</em>.</p>
+<p class="reference-entry" id="ref-guo2022local">Guo et al.. (2022). "A local manipulation path replanning algorithm on deformable linear objects for collisions resulted from model deviation". <em>Journal of Manufacturing Systems</em>. vol. 65, pp. 362–377.</p>
+<p class="reference-entry" id="ref-guo2020algorithm">Guo et al.. (2020). "An algorithm based on bidirectional searching and geometric constrained sampling for automatic manipulation planning in aircraft cable assembly". <em>Journal of Manufacturing Systems</em>. vol. 57, pp. 158–168.</p>
+<p class="reference-entry" id="ref-hardman20213d">Hardman et al.. (2021). "{3D} printable sensorized soft gelatin hydrogel for multi-material soft structures". <em>IEEE Robotics and Automation Letters</em>. vol. 6, pp. 5269–5275.</p>
+<p class="reference-entry" id="ref-hellman2017functional">Hellman et al.. (2017). "Functional contour-following via haptic perception and reinforcement learning". <em>IEEE transactions on haptics</em>. vol. 11, pp. 61–72.</p>
+<p class="reference-entry" id="ref-herguedas2019survey">Herguedas et al.. (2019). "Survey on multi-robot manipulation of deformable objects". <em>2019 24th IEEE International Conference on Emerging Technologies and Factory Automation (ETFA)</em>.</p>
+<p class="reference-entry" id="ref-hermansson2016identification">Hermansson et al.. (2016). "Identification of material parameters of complex cables from scanned 3D shapes". <em>Procedia CIRP</em>. vol. 43, pp. 280–285.</p>
+<p class="reference-entry" id="ref-holevsovsky2025interactive">Holešovskỳ et al.. (2025). "Interactive Robotic Moving Cable Segmentation by Motion Correlation". <em>IEEE Robotics and Automation Letters</em>. vol. 10, pp. 7420-7427.</p>
+<p class="reference-entry" id="ref-holevsovsky2024movingcables">Holešovskỳ et al.. (2024). "MovingCables: Moving Cable Segmentation Method and Dataset". <em>IEEE Robotics and Automation Letters</em>. vol. 9, pp. 6991-6998.</p>
+<p class="reference-entry" id="ref-hou2019review">Hou et al.. (2019). "A review on modeling of flexible deformable object for dexterous robotic manipulation". <em>International Journal of Advanced Robotic Systems</em>. vol. 16, pp. 1729881419848894.</p>
+<p class="reference-entry" id="ref-huang2023learning">Huang et al.. (2023). "Learning Graph Dynamics With External Contact for Deformable Linear Objects Shape Control". <em>IEEE Robotics and Automation Letters</em>. vol. 8, pp. 3892-3899.</p>
+<p class="reference-entry" id="ref-huang2024cooperative">Huang and Zhang. (2024). "Cooperative object transport by two robots connected with a ball-string-ball structure". <em>IEEE Robotics and Automation Letters</em>. vol. 9, pp. 4313-4320.</p>
+<p class="reference-entry" id="ref-huang2023untangling">Huang et al.. (2024). "Untangling multiple deformable linear objects in unknown quantities with complex backgrounds". <em>IEEE Transactions on Automation Science and Engineering</em>. vol. 21, pp. 671-683.</p>
+<p class="reference-entry" id="ref-huang2015robotic">Huang et al.. (2015). "Robotic needle threading manipulation based on high-speed motion strategy using high-speed visual feedback". <em>2015 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-huo2022keypoint">Huo et al.. (2022). "Keypoint-based planar bimanual shaping of deformable linear objects under environmental constraints with hierarchical action framework". <em>IEEE Robotics and Automation Letters</em>. vol. 7, pp. 5222–5229.</p>
+<p class="reference-entry" id="ref-irving2016maskslic">Irving. (2016). "{maskSLIC}: regional superpixel generation with application to local pathology characterisation in medical images". <em>arXiv preprint arXiv:1606.09518</em>.</p>
+<p class="reference-entry" id="ref-jackson2018realtimesuture">Jackson et al.. (2018). "Real-Time Visual Tracking of Dynamic Surgical Suture Threads". <em>IEEE Transactions on Automation Science and Engineering</em>. vol. 15, pp. 1078-1090.</p>
+<p class="reference-entry" id="ref-jiang2025phystwin">Jiang et al.. (2025). "PhysTwin: Physics-informed reconstruction and simulation of deformable objects from videos". <em>Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)</em>.</p>
+<p class="reference-entry" id="ref-jiang2011robotized">Jiang et al.. (2011). "Robotized assembly of a wire harness in a car production line". <em>Advanced Robotics</em>. vol. 25, pp. 473–489.</p>
+<p class="reference-entry" id="ref-zhu2021103798">Jihong Zhu et al.. (2021). "Vision-based manipulation of deformable and rigid objects using subspace projections of {2D} contours". <em>Robotics and Autonomous Systems</em>. vol. 142, pp. 103798.</p>
+<p class="reference-entry" id="ref-jilani2025quasi">Jilani et al.. (2025). "Quasi-Static Cosserat Rods in Contact With Implicit Surfaces". <em>IEEE Robotics and Automation Letters</em>.</p>
+<p class="reference-entry" id="ref-jimenez2012survey">Jiménez. (2012). "Survey on model-based manipulation planning of deformable objects". <em>Robotics and computer-integrated manufacturing</em>. vol. 28, pp. 154–163.</p>
+<p class="reference-entry" id="ref-jin2022robotic">Jin et al.. (2022). "Robotic cable routing with spatial representation". <em>IEEE Robotics and Automation Letters</em>. vol. 7, pp. 5687–5694.</p>
+<p class="reference-entry" id="ref-jin2019robust">Jin et al.. (2019). "Robust deformation model approximation for robotic cable manipulation". <em>2019 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-joglekar2023suture">Joglekar et al.. (2023). "Suture Thread Spline Reconstruction from Endoscopic Images for Robotic Surgery with Reliability-driven Keypoint Detection". <em>2023 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-jung2011discrete">Jung et al.. (2011). "A discrete mechanics approach to the Cosserat rod theory—Part 1: Static equilibria". <em>International Journal for Numerical Methods in Engineering</em>. vol. 85, pp. 31–60.</p>
+<p class="reference-entry" id="ref-kaiser2021data">Kaiser et al.. (2021). "Data-driven discovery of Koopman eigenfunctions for control". <em>Machine Learning: Science and Technology</em>. vol. 2, pp. 035023.</p>
+<p class="reference-entry" id="ref-kaiser2018sparse">Kaiser et al.. (2018). "Sparse identification of nonlinear dynamics for model predictive control in the low-data limit". <em>Proceedings of the Royal Society A</em>. vol. 474, pp. 20180335.</p>
+<p class="reference-entry" id="ref-kamaras2025distributional">Kamaras and Ramamoorthy. (2025). "Distributional Treatment of Real2Sim2Real for Object-Centric Agent Adaptation in Vision-Driven DLO Manipulation". <em>IEEE Robotics and Automation Letters</em>. vol. 10, pp. 8075-8082.</p>
+<p class="reference-entry" id="ref-karaev2024cotracker3">Karaev et al.. (2024). "CoTracker3: Simpler and better point tracking by pseudolabelling real videos". <em>arXiv preprint arXiv:2410.11831</em>.</p>
+<p class="reference-entry" id="ref-keipour2022deformable">Keipour et al.. (2022). "Deformable one-dimensional object detection for routing and manipulation". <em>IEEE Robotics and Automation Letters</em>. vol. 7, pp. 4329–4336.</p>
+<p class="reference-entry" id="ref-keipour2022efficient">Keipour et al.. (2022). "Efficient spatial representation and routing of deformable one-dimensional objects for manipulation". <em>2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-kendall2017uncertainties">Kendall and Gal. (2017). "What uncertainties do we need in bayesian deep learning for computer vision?". <em>Advances in neural information processing systems</em>. vol. 30.</p>
+<p class="reference-entry" id="ref-khalifa2021new">Khalifa and Palli. (2022). "New model-based manipulation technique for reshaping deformable linear objects". <em>The International Journal of Advanced Manufacturing Technology</em>. vol. 118, pp. 3575–3583.</p>
+<p class="reference-entry" id="ref-kicki2021tell">Kicki et al.. (2021). "Tell me, what do you see?—interpretable classification of wiring harness branches with deep neural networks". <em>Sensors</em>. vol. 21, pp. 4327.</p>
+<p class="reference-entry" id="ref-kicki2023dloftbs">Kicki et al.. (2023). "DLOFTBs – Fast Tracking of Deformable Linear Objects with B-splines". <em>2023 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-kirillov2023segment">Kirillov et al.. (2023). "Segment anything". <em>Proceedings of the IEEE/CVF international conference on computer vision</em>.</p>
+<p class="reference-entry" id="ref-koessler2021efficient">Koessler et al.. (2021). "An efficient approach to closed-loop shape control of deformable objects using finite element models". <em>2021 IEEE International conference on robotics and automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-korda2020koopman">Korda and Mezić. (2020). "Koopman model predictive control of nonlinear dynamical systems". <em>The Koopman Operator in Systems and Control: Concepts, Methodologies, and Applications</em>.</p>
+<p class="reference-entry" id="ref-kotaru2020multiple">Kotaru and Sreenath. (2020). "Multiple quadrotors carrying a flexible hose: dynamics, differential flatness and control". <em>IFAC-PapersOnLine</em>. vol. 53, pp. 8832–8839.</p>
+<p class="reference-entry" id="ref-kotaru2018differential">Kotaru et al.. (2018). "Differential-flatness and control of quadrotor (s) with a payload suspended through flexible cable (s)". <em>2018 Indian Control Conference (ICC)</em>.</p>
+<p class="reference-entry" id="ref-kugelstadt2016position">Kugelstadt and Schömer. (2016). "Position and orientation based Cosserat rods.". <em>Symposium on Computer Animation</em>. vol. 169, pp. 178.</p>
+<p class="reference-entry" id="ref-laezza2021learning">Laezza and Karayiannidis. (2021). "Learning shape control of elastoplastic deformable linear objects". <em>2021 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-laezza2021reform">Laezza et al.. (2021). "Reform: A robot learning sandbox for deformable linear object manipulation". <em>2021 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-lagneau2020automatic">Lagneau et al.. (2020). "Automatic shape control of deformable wires based on model-free visual servoing". <em>IEEE Robotics and Automation Letters</em>. vol. 5, pp. 5252–5259.</p>
+<p class="reference-entry" id="ref-lang2011multi">Lang et al.. (2011). "Multi-body dynamics simulation of geometrically exact Cosserat rods". <em>Multibody System Dynamics</em>. vol. 25, pp. 285–312.</p>
+<p class="reference-entry" id="ref-lee2021sample">Lee et al.. (2021). "Sample-efficient learning of deformable linear object manipulation in the real world through self-supervision". <em>IEEE Robotics and Automation Letters</em>. vol. 7, pp. 573–580.</p>
+<p class="reference-entry" id="ref-li2025routing">Li et al.. (2025). "Routing Manipulation of Deformable Linear Object Using Reinforcement Learning and Diffusion Policy". <em>2025 IEEE Proc. of ICRA</em>.</p>
+<p class="reference-entry" id="ref-li2024learning">Li and Choi. (2024). "Learning for Deformable Linear Object Insertion Leveraging Flexibility Estimation from Visual Cues". <em>2024 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-lim2022real2sim2real">Lim et al.. (2022). "Real2Sim2Real: Self-Supervised Learning of Physical Single-Step Dynamic Actions for Planar Robot Casting". <em>2022 International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-liu2023robotic">Liu et al.. (2023). "Robotic manipulation of deformable rope-like objects using differentiable compliant position-based dynamics". <em>IEEE Robotics and Automation Letters</em>. vol. 8, pp. 3964–3971.</p>
+<p class="reference-entry" id="ref-liu2017modeling">Liu et al.. (2017). "Modeling and vibration control of a flexible aerial refueling hose with variable lengths and input constraint". <em>Automatica</em>. vol. 77, pp. 302–310.</p>
+<p class="reference-entry" id="ref-long2015fully">Long et al.. (2015). "Fully convolutional networks for semantic segmentation". <em>Proceedings of the IEEE conference on computer vision and pattern recognition</em>.</p>
+<p class="reference-entry" id="ref-lu2019sutureplanning">Lu et al.. (2019). "Vision-Based Surgical Suture Looping Through Trajectory Planning for Wound Suturing". <em>IEEE Transactions on Automation Science and Engineering</em>. vol. 16, pp. 542-556.</p>
+<p class="reference-entry" id="ref-lu2020learningdrivensuture">Lu et al.. (2020). "A Learning-Driven Framework with Spatial Optimization For Surgical Suture Thread Reconstruction and Autonomous Grasping Under Multiple Topologies and Environmental Noises". <em>2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-lu2022towardsuture">Lu et al.. (2022). "Toward Image-Guided Automated Suture Grasping Under Complex Environments: A Learning-Enabled and Optimization-Based Holistic Framework". <em>IEEE Transactions on Automation Science and Engineering</em>. vol. 19, pp. 3794-3808. <a href="https://doi.org/10.1109/TASE.2021.3136185" target="_blank" class="ref-link">[DOI]</a></p>
+<p class="reference-entry" id="ref-lui2013tangled">Lui and Saxena. (2013). "Tangled: Learning to untangle ropes with rgb-d perception". <em>2013 IEEE/RSJ International Conference on Intelligent Robots and Systems</em>.</p>
+<p class="reference-entry" id="ref-luo2025tsl">Luo and Demiris. (2025). "TSL: Tracking Deformable Linear Objects for Bimanual Shoe Lacing". <em>IEEE Robotics and Automation Letters</em>. vol. 10, pp. 8212-8219.</p>
+<p class="reference-entry" id="ref-luo2025precise">Luo et al.. (2025). "Precise and dexterous robotic manipulation via human-in-the-loop reinforcement learning". <em>Science Robotics</em>. vol. 10, pp. eads5033.</p>
+<p class="reference-entry" id="ref-luo2024multi">Luo et al.. (2024). "Multi-stage cable routing through hierarchical imitation learning". <em>IEEE Transactions on Robotics</em>. vol. 40, pp. 1476–1491.</p>
+<p class="reference-entry" id="ref-lv2022dynamic">Lv et al.. (2022). "Dynamic modeling and control of deformable linear objects for single-arm and dual-arm robot manipulations". <em>IEEE Transactions on Robotics</em>. vol. 38, pp. 2341–2353.</p>
+<p class="reference-entry" id="ref-lv2023learning">Lv et al.. (2023). "Learning to estimate 3-d states of deformable linear objects from single-frame occluded point clouds". <em>2023 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-lv2020review">Lv et al.. (2020). "A review of techniques for modeling flexible cables". <em>Computer-Aided Design</em>. vol. 122, pp. 102826.</p>
+<p class="reference-entry" id="ref-lv2017physically">Lv et al.. (2017). "Physically based real-time interactive assembly simulation of cable harness". <em>Journal of Manufacturing Systems</em>. vol. 43, pp. 385–399.</p>
+<p class="reference-entry" id="ref-ma2022learning">Ma et al.. (2022). "Learning latent graph dynamics for visual manipulation of deformable objects". <em>2022 International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-macklin2014unified">Macklin et al.. (2014). "Unified particle physics for real-time applications". <em>ACM Transactions on Graphics (TOG)</em>. vol. 33, pp. 1–12.</p>
+<p class="reference-entry" id="ref-lepert2025phantom">Marion Lepert et al.. (2025). "Phantom: Training Robots Without Robots Using Only Human Videos". <em>9th Annual Conference on Robot Learning</em>.</p>
+<p class="reference-entry" id="ref-marra2024mpcsuturing">Marra et al.. (2024). "MPC for Suturing Stitch Automation". <em>IEEE Transactions on Medical Robotics and Bionics</em>. vol. 6, pp. 1468-1477.</p>
+<p class="reference-entry" id="ref-mcconachie2020learning">McConachie et al.. (2020). "Learning when to trust a dynamics model for planning in reduced state spaces". <em>IEEE Robotics and Automation Letters</em>. vol. 5, pp. 3540–3547.</p>
+<p class="reference-entry" id="ref-mishani2021real">Mishani and Sintov. (2021). "Real-time non-visual shape estimation and robotic dual-arm manipulation control of an elastic wire". <em>IEEE Robotics and Automation Letters</em>. vol. 7, pp. 422–429.</p>
+<p class="reference-entry" id="ref-mishani2023learning">Mishani and Sintov. (2023). "Learning configurations of wires for real-time shape estimation and manipulation planning". <em>Engineering Applications of Artificial Intelligence</em>. vol. 121, pp. 105967.</p>
+<p class="reference-entry" id="ref-mitrano2021learning">Mitrano et al.. (2021). "Learning where to trust unreliable models in an unstructured world for deformable object manipulation". <em>Science Robotics</em>. vol. 6, pp. eabd8170.</p>
+<p class="reference-entry" id="ref-mitrano2023focused">Mitrano et al.. (2023). "Focused adaptation of dynamics models for deformable object manipulation". <em>2023 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-mittal2025isaaclab">Mittal et al.. (2025). "Isaac Lab: A GPU-Accelerated Simulation Framework for Multi-Modal Robot Learning". <em>arXiv preprint</em>. vol. arXiv:2511.04831.</p>
+<p class="reference-entry" id="ref-moll2006path">Moll and Kavraki. (2006). "Path planning for deformable linear objects". <em>IEEE Transactions on Robotics</em>. vol. 22, pp. 625–636.</p>
+<p class="reference-entry" id="ref-monguzzi2025optimal">Monguzzi et al.. (2025). "Optimal model-based path planning for the robotic manipulation of deformable linear objects". <em>Robotics and Computer-Integrated Manufacturing</em>. vol. 92, pp. 102891.</p>
+<p class="reference-entry" id="ref-monguzzi2023tactile">Monguzzi et al.. (2023). "Tactile based robotic skills for cable routing operations". <em>2023 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-monguzzi2024sensorless">Monguzzi et al.. (2024). "Sensorless robotized cable contour following and connector detection". <em>Mechatronics</em>. vol. 97, pp. 103096.</p>
+<p class="reference-entry" id="ref-monguzzi2024potential">Monguzzi et al.. (2024). "Potential Field-Based Online Path Planning for Robust Cable Routing". <em>2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-myronenko2010point">Myronenko and Song. (2010). "Point set registration: Coherent point drift". <em>IEEE transactions on pattern analysis and machine intelligence</em>. vol. 32, pp. 2262–2275.</p>
+<p class="reference-entry" id="ref-nair2017combining">Nair et al.. (2017). "Combining self-supervised learning and imitation for vision-based rope manipulation". <em>2017 IEEE international conference on robotics and automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-naughton2021elastica">Naughton et al.. (2021). "Elastica: A compliant mechanics environment for soft robotic control". <em>IEEE Robotics and Automation Letters</em>. vol. 6, pp. 3389–3396.</p>
+<p class="reference-entry" id="ref-navarro2013model">Navarro-Alarcon et al.. (2013). "Model-free visually servoed deformation control of elastic objects by robot manipulators". <em>IEEE Transactions on Robotics</em>. vol. 29, pp. 1457–1468.</p>
+<p class="reference-entry" id="ref-nguyen2021deep">Nguyen and Franke. (2021). "Deep learning-based optical inspection of rigid and deformable linear objects in wiring harnesses". <em>Procedia CIRP</em>. vol. 104, pp. 1765–1770.</p>
+<p class="reference-entry" id="ref-nguyen2022enabling">Nguyen et al.. (2022). "Enabling deep learning using synthetic data: A case study for the automotive wiring harness manufacturing". <em>Procedia CIRP</em>. vol. 107, pp. 1263–1268.</p>
+<p class="reference-entry" id="ref-nist">NIST. (2025). "Assembly Performance Metrics and Test Methods".</p>
+<p class="reference-entry" id="ref-page2021prisma">Page et al.. (2021). "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews". <em>International Journal of Surgery</em>. vol. 88, pp. 105906.</p>
+<p class="reference-entry" id="ref-palli2019tactile">Palli and Pirozzi. (2019). "A tactile-based wire manipulation system for manufacturing applications". <em>Robotics</em>. vol. 8, pp. 46.</p>
+<p class="reference-entry" id="ref-palli2020model">Palli. (2020). "Model-based manipulation of deformable linear objects by multivariate dynamic splines". <em>2020 IEEE Conference on Industrial Cyberphysical Systems (ICPS)</em>.</p>
+<p class="reference-entry" id="ref-pecyna2022visual">Pecyna et al.. (2022). "Visual-tactile multimodality for following deformable linear objects using reinforcement learning". <em>2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-pedram2021autonomous">Pedram et al.. (2021). "Autonomous Suturing Framework and Quantification Using a Cable-Driven Surgical Robot". <em>IEEE Transactions on Robotics</em>. vol. 37, pp. 404-417.</p>
+<p class="reference-entry" id="ref-pirozzi2018tactile">Pirozzi and Natale. (2018). "Tactile-based manipulation of wires for switchgear assembly". <em>IEEE/ASME Transactions on Mechatronics</em>. vol. 23, pp. 2650–2661.</p>
+<p class="reference-entry" id="ref-qi2026llm">Qi et al.. (2026). "{LLM}-driven symbolic planning and hierarchical imitation learning for long-horizon deformable object assembly". <em>Robotics and Computer-Integrated Manufacturing</em>. vol. 97, pp. 103096.</p>
+<p class="reference-entry" id="ref-qi2021contour">Qi et al.. (2021). "Contour moments based manipulation of composite rigid-deformable objects with finite time model estimation and shape/position control". <em>IEEE/ASME transactions on mechatronics</em>. vol. 27, pp. 2985–2996.</p>
+<p class="reference-entry" id="ref-qi2017pointnet++">Qi et al.. (2017). "Pointnet++: Deep hierarchical feature learning on point sets in a metric space". <em>Advances in neural information processing systems</em>. vol. 30.</p>
+<p class="reference-entry" id="ref-qi2023adaptive">Qi et al.. (2023). "Adaptive shape servoing of elastic rods using parameterized regression features and auto-tuning motion controls". <em>IEEE Robotics and Automation Letters</em>. vol. 9, pp. 1428–1435.</p>
+<p class="reference-entry" id="ref-roa2015grasp">Roa and Suárez. (2015). "Grasp quality measures: review and performance". <em>Autonomous robots</em>. vol. 38, pp. 65–88.</p>
+<p class="reference-entry" id="ref-ronneberger2015u">Ronneberger et al.. (2015). "{U-Net}: Convolutional networks for biomedical image segmentation". <em>Medical Image Computing and Computer-Assisted Intervention (MICCAI)</em>.</p>
+<p class="reference-entry" id="ref-roussel2015manipulation">Roussel et al.. (2015). "Manipulation planning with contacts for an extensible elastic rod by sampling on the submanifold of static equilibrium configurations". <em>2015 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-roussel2019motion">Roussel et al.. (2019). "Motion planning for an elastic rod using contacts". <em>IEEE Transactions on Automation Science and Engineering</em>. vol. 17, pp. 670–683.</p>
+<p class="reference-entry" id="ref-roweis2000nonlinear">Roweis and Saul. (2000). "Nonlinear dimensionality reduction by locally linear embedding". <em>science</em>. vol. 290, pp. 2323–2326.</p>
+<p class="reference-entry" id="ref-rucker2011statics">Rucker and Webster III. (2011). "Statics and dynamics of continuum robots with general tendon routing and external loading". <em>IEEE Transactions on Robotics</em>. vol. 27, pp. 1033–1044.</p>
+<p class="reference-entry" id="ref-sanchez2018robotic">Sanchez et al.. (2018). "Robotic manipulation and sensing of deformable objects in domestic and industrial applications: a survey". <em>The International Journal of Robotics Research</em>. vol. 37, pp. 688–716.</p>
+<p class="reference-entry" id="ref-saviolo2023active">Saviolo et al.. (2023). "Active learning of discrete-time dynamics for uncertainty-aware model predictive control". <em>IEEE Transactions on Robotics</em>. vol. 40, pp. 1273–1291.</p>
+<p class="reference-entry" id="ref-schorp2023selfsupervisedsuture">Schorp et al.. (2023). "Self-Supervised Learning for Interactive Perception of Surgical Thread for Autonomous Suture Tail-Shortening". <em>2023 IEEE 19th International Conference on Automation Science and Engineering (CASE)</em>.</p>
+<p class="reference-entry" id="ref-seita2021learning">Seita et al.. (2021). "Learning to rearrange deformable cables, fabrics, and bags with goal-conditioned transporter networks". <em>2021 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-sen2016automating">Sen et al.. (2016). "Automating multi-throw multilateral surgical suturing with a mechanical needle guide and sequential convex optimization". <em>2016 IEEE international conference on robotics and automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-servin2008rigid">Servin and Lacoursiere. (2008). "Rigid body cable for virtual environments". <em>IEEE Transactions on Visualization and Computer Graphics</em>. vol. 14, pp. 783–796.</p>
+<p class="reference-entry" id="ref-shah2018planning">Shah et al.. (2018). "Planning for manipulation of interlinked deformable linear objects with applications to aircraft assembly". <em>IEEE Transactions on Automation Science and Engineering</em>. vol. 15, pp. 1823–1838.</p>
+<p class="reference-entry" id="ref-shao2021accurately">Shao et al.. (2021). "Accurately solving rod dynamics with graph learning". <em>Advances in Neural Information Processing Systems</em>. vol. 34, pp. 4829–4842.</p>
+<p class="reference-entry" id="ref-she2021cable">She et al.. (2021). "Cable manipulation with a tactile-reactive gripper". <em>The International Journal of Robotics Research</em>. vol. 40, pp. 1385–1401.</p>
+<p class="reference-entry" id="ref-shen2025aerial">Shen et al.. (2025). "Aerial robots carrying flexible cables: Dynamic shape optimal control via spectral method model". <em>IEEE Transactions on Robotics</em>.</p>
+<p class="reference-entry" id="ref-shetab2023lattice">Shetab-Bushehri et al.. (2023). "Lattice-based shape tracking and servoing of elastic objects". <em>IEEE Transactions on Robotics</em>. vol. 40, pp. 364–381.</p>
+<p class="reference-entry" id="ref-shivakumar2023sgtm">Shivakumar et al.. (2023). "Sgtm 2.0: Autonomously untangling long cables using interactive perception". <em>2023 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-sihaou2025agile">Sihao Sun et al.. (2025). "Agile and cooperative aerial manipulation of a cable-suspended load". <em>Science Robotics</em>. vol. 10, pp. eadu8015.</p>
+<p class="reference-entry" id="ref-sintov2020motion">Sintov et al.. (2020). "Motion planning for dual-arm manipulation of elastic rods". <em>IEEE Robotics and Automation Letters</em>. vol. 5, pp. 6065–6072.</p>
+<p class="reference-entry" id="ref-soler2018cosserat">Soler et al.. (2018). "Cosserat rods with projective dynamics". <em>Computer Graphics Forum</em>. vol. 37, pp. 137–147.</p>
+<p class="reference-entry" id="ref-song2022dynamics">Song and Huang. (2022). "Dynamics and anti-disturbance control for tethered aircraft system". <em>Nonlinear Dynamics</em>. vol. 110, pp. 2383–2399.</p>
+<p class="reference-entry" id="ref-song2019vision">Song et al.. (2019). "Vision based topological state recognition for deformable linear object untangling conducted in unknown background". <em>2019 IEEE International Conference on Robotics and Biomimetics (ROBIO)</em>.</p>
+<p class="reference-entry" id="ref-sorkine2007rigid">Sorkine and Alexa. (2007). "As-rigid-as-possible surface modeling". <em>Symposium on Geometry processing</em>. vol. 4, pp. 109–116.</p>
+<p class="reference-entry" id="ref-objectgathering2022">Su et al.. (2022). "Object Gathering With a Tethered Robot Duo". <em>IEEE Robotics and Automation Letters</em>. vol. 7, pp. 2132-2139.</p>
+<p class="reference-entry" id="ref-sun2023robust">Sun et al.. (2024). "A Robust Deformable Linear Object Perception Pipeline in {3D}: From Segmentation to Reconstruction". <em>IEEE Robotics and Automation Letters</em>. vol. 9, pp. 843-850.</p>
+<p class="reference-entry" id="ref-sundaresan2020learning">Sundaresan et al.. (2020). "Learning rope manipulation policies using dense object descriptors trained on synthetic depth data". <em>2020 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-sundaresan2021untangling">Sundaresan et al.. (2021). "Untangling dense non-planar knots by learning manipulation features and recovery policies". <em>Proceedings of Robotics: Science and Systems (RSS)</em>.</p>
+<p class="reference-entry" id="ref-szymko2024calibrationless">Szymko et al.. (2024). "Calibrationless Bimanual Deformable Linear Object Manipulation with Recursive Least Squares Filter". <em>IEEE Access</em>. vol. 12, pp. 126707-126716.</p>
+<p class="reference-entry" id="ref-suberkrub2022feel">Süberkrüb et al.. (2022). "Feel the tension: Manipulation of deformable linear objects in environments with fixtures using force information". <em>2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-tang2022track">Tang and Tomizuka. (2022). "Track deformable objects from point clouds with structure preserved registration". <em>The International Journal of Robotics Research</em>. vol. 41, pp. 599–614.</p>
+<p class="reference-entry" id="ref-tang2017state">Tang et al.. (2017). "State estimation for deformable objects by point registration and dynamic simulation". <em>2017 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-tang2024learning">Tang et al.. (2024). "Learning-based MPC with safety filter for constrained deformable linear object manipulation". <em>IEEE Robotics and Automation Letters</em>. vol. 9, pp. 2877–2884.</p>
+<p class="reference-entry" id="ref-theetten2008geometrically">Theetten et al.. (2008). "Geometrically exact dynamic splines". <em>Computer-Aided Design</em>. vol. 40, pp. 35–48.</p>
+<p class="reference-entry" id="ref-todorov2012mujoco">Todorov et al.. (2012). "Mujoco: A physics engine for model-based control". <em>2012 IEEE/RSJ international conference on intelligent robots and systems</em>.</p>
+<p class="reference-entry" id="ref-tong2023sim2real">Tong et al.. (2024). "Sim2Real Neural Controllers for Physics-Based Robotic Deployment of Deformable Linear Objects". <em>The International Journal of Robotics Research</em>. vol. 43, pp. 791–810.</p>
+<p class="reference-entry" id="ref-zhao-rss-23">Tony Z. Zhao AND Vikash Kumar AND Sergey Levine AND Chelsea Finn. (2023). "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware". <em>Proceedings of Robotics: Science and Systems</em>.</p>
+<p class="reference-entry" id="ref-trommnau2019overview">Trommnau et al.. (2019). "Overview of the state of the art in the production process of automotive wire harnesses, current research and future trends". <em>Procedia CIRP</em>. vol. 81, pp. 387–392.</p>
+<p class="reference-entry" id="ref-tummers2023cosserat">Tummers et al.. (2023). "Cosserat rod modeling of continuum robots from Newtonian and Lagrangian perspectives". <em>IEEE Transactions on Robotics</em>. vol. 39, pp. 2360–2378.</p>
+<p class="reference-entry" id="ref-umetani2014position">Umetani et al.. (2014). "Position-based elastic rods". <em>Proceedings of the ACM SIGGRAPH/Eurographics Symposium on Computer Animation</em>.</p>
+<p class="reference-entry" id="ref-valentini2011modeling">Valentini and Pennestrì. (2011). "Modeling elastic beams using dynamic splines". <em>Multibody system dynamics</em>. vol. 25, pp. 271–284.</p>
+<p class="reference-entry" id="ref-viswanath2023ltodo">Viswanath et al.. (2023). "HANDLOOM: Learned Tracing of One-Dimensional Objects for Inspection and Manipulation". <em>7th Annual Conference on Robot Learning</em>.</p>
+<p class="reference-entry" id="ref-viswanath2021disentangling">Viswanath et al.. (2021). "Disentangling dense multi-cable knots". <em>2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-waltersson2022planning">Waltersson et al.. (2022). "Planning and control for cable-routing with dual-arm robot". <em>2022 International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-wang2020solov2">Wang et al.. (2020). "Solov2: Dynamic and fast instance segmentation". <em>Advances in Neural information processing systems</em>. vol. 33, pp. 17721–17732.</p>
+<p class="reference-entry" id="ref-wang2022offline">Wang et al.. (2022). "Offline-online learning of deformation model for cable manipulation with graph neural networks". <em>IEEE Robotics and Automation Letters</em>. vol. 7, pp. 5544–5551.</p>
+<p class="reference-entry" id="ref-wang2021tracking">Wang et al.. (2021). "Tracking partially-occluded deformable objects while enforcing geometric constraints". <em>2021 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-wang2022real">Wang and Yamakawa. (2022). "Real-Time Occlusion-Robust Deformable Linear Object Tracking With Model-Based Gaussian Mixture Model". <em>Frontiers in Neurorobotics</em>. vol. 16, pp. 886068.</p>
+<p class="reference-entry" id="ref-wang2019learning">Wang et al.. (2019). "Learning robotic manipulation through visual planning and acting". <em>arXiv preprint arXiv:1905.04411</em>.</p>
+<p class="reference-entry" id="ref-wang2015online">Wang et al.. (2015). "An online method for tight-tolerance insertion tasks for string and rope". <em>2015 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-weng2024interactive">Weng et al.. (2024). "Interactive perception for deformable object manipulation". <em>IEEE Robotics and Automation Letters</em>. vol. 9, pp. 7763-7770.</p>
+<p class="reference-entry" id="ref-wiese2023describing">Wiese et al.. (2023). "Describing and analyzing mechanical contact for continuum robots using a shooting-based cosserat rod implementation". <em>IEEE Robotics and Automation Letters</em>. vol. 9, pp. 1668–1675.</p>
+<p class="reference-entry" id="ref-wilson2023cable">Wilson et al.. (2023). "Cable Routing and Assembly using Tactile-driven Motion Primitives". <em>2023 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-wu2022novel">Wu et al.. (2022). "A novel cable-grasping planner for manipulator based on the operation surface". <em>Robotics and Computer-Integrated Manufacturing</em>. vol. 73, pp. 102252.</p>
+<p class="reference-entry" id="ref-wu2022equilibrium">Wu et al.. (2022). "Equilibrium manipulation planning for a soft elastic rod considering an external distributed force and intrinsic curvature". <em>IEEE Robotics and Automation Letters</em>. vol. 7, pp. 11442–11449.</p>
+<p class="reference-entry" id="ref-xiang2025structured">Xiang et al.. (2025). "Structured {3D} latents for scalable and versatile {3D} generation". <em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</em>.</p>
+<p class="reference-entry" id="ref-xiang2023trackdlo">Xiang et al.. (2023). "TrackDLO: Tracking Deformable Linear Objects Under Occlusion with Motion Coherence". <em>IEEE Robotics and Automation Letters</em>. vol. 8, pp. 6179–6186.</p>
+<p class="reference-entry" id="ref-airbender2025">Xu et al.. (2025). "AirBender: Adaptive Transportation of Bendable Objects Using Dual UAVs". <em>IEEE Robotics and Automation Letters</em>. vol. 10, pp. 2790-2797.</p>
+<p class="reference-entry" id="ref-yamakawa2013dynamic">Yamakawa et al.. (2013). "Dynamic high-speed knotting of a rope by a manipulator". <em>International Journal of Advanced Robotic Systems</em>. vol. 10, pp. 361.</p>
+<p class="reference-entry" id="ref-yan2020self">Yan et al.. (2020). "Self-supervised learning of state estimation for manipulating deformable linear objects". <em>IEEE robotics and automation letters</em>. vol. 5, pp. 2372–2379.</p>
+<p class="reference-entry" id="ref-yang2022online">Yang et al.. (2022). "Online Model Learning for Shape Control of Deformable Linear Objects". <em>2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-yang2022particle">Yang et al.. (2022). "Particle Filters in Latent Space for Robust Deformable Linear Object Tracking". <em>IEEE Robotics and Automation Letters</em>. vol. 7, pp. 12577–12584.</p>
+<p class="reference-entry" id="ref-yang2021learning">Yang et al.. (2021). "Learning to propagate interaction effects for modeling deformable linear objects dynamics". <em>2021 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-yang2022learning">Yang et al.. (2022). "Learning differentiable dynamics models for shape control of deformable linear objects". <em>Robotics and Autonomous Systems</em>. vol. 158, pp. 104258.</p>
+<p class="reference-entry" id="ref-yin2021modeling">Yin et al.. (2021). "Modeling, learning, perception, and control methods for deformable object manipulation". <em>Science Robotics</em>. vol. 6, pp. eabd8803.</p>
+<p class="reference-entry" id="ref-yu2024inhand">Yu et al.. (2024). "In-Hand Following of Deformable Linear Objects Using Dexterous Fingers with Tactile Sensing". <em>2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-yu2022global">Yu et al.. (2022). "Global model learning for large deformation control of elastic deformable linear objects: An efficient and adaptive approach". <em>IEEE Transactions on Robotics</em>. vol. 39, pp. 417–436.</p>
+<p class="reference-entry" id="ref-yu2023generalizable">Yu et al.. (2025). "Generalizable whole-body global manipulation of deformable linear objects by dual-arm robot in 3-d constrained environments". <em>The International Journal of Robotics Research</em>. vol. 44, pp. 607–639.</p>
+<p class="reference-entry" id="ref-yu2023precise">Yu et al.. (2023). "Precise Robotic Needle-Threading with Tactile Perception and Reinforcement Learning". <em>Conference on Robot Learning</em>.</p>
+<p class="reference-entry" id="ref-yu2023coarse">Yu et al.. (2023). "A coarse-to-fine framework for dual-arm manipulation of deformable linear objects with whole-body obstacle avoidance". <em>2023 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-yuan2017gelsight">Yuan et al.. (2017). "Gelsight: High-resolution robot tactile sensors for estimating geometry and force". <em>Sensors</em>. vol. 17, pp. 2762.</p>
+<p class="reference-entry" id="ref-yuille1989mathematical">Yuille and Grzywacz. (1989). "A mathematical analysis of the motion coherence theory". <em>International Journal of Computer Vision</em>. vol. 3, pp. 155–175.</p>
+<p class="reference-entry" id="ref-zakaria2022robotic">Zakaria et al.. (2022). "Robotic control of the deformation of soft linear objects using deep reinforcement learning". <em>2022 IEEE 18th International Conference on Automation Science and Engineering (CASE)</em>.</p>
+<p class="reference-entry" id="ref-zanella2021auto">Zanella et al.. (2021). "Auto-generated wires dataset for semantic segmentation with domain-independence". <em>2021 International Conference on Computer, Control and Robotics (ICCCR)</em>.</p>
+<p class="reference-entry" id="ref-zanella2019dlo">Zanella et al.. (2019). "{DLO-In-Hole} for assembly tasks with tactile feedback and lstm networks". <em>2019 6th International Conference on Control, Decision and Information Technologies (CoDIT)</em>.</p>
+<p class="reference-entry" id="ref-zanella2021robot">Zanella and Palli. (2021). "Robot Learning-Based Pipeline for Autonomous Reshaping of a Deformable Linear Object in Cluttered Backgrounds". <em>IEEE Access</em>. vol. 9, pp. 138296–138306.</p>
+<p class="reference-entry" id="ref-zhang2024collision">Zhang et al.. (2024). "A Collision-Aware Cable Grasping Method in Cluttered Environment". <em>2024 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-zhang2021robots">Zhang et al.. (2021). "Robots of the lost arc: Self-supervised learning to dynamically manipulate fixed-endpoint cables". <em>2021 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-zhang1984fast">Zhang and Suen. (1984). "A fast parallel algorithm for thinning digital patterns". <em>Communications of the ACM</em>. vol. 27, pp. 236–239.</p>
+<p class="reference-entry" id="ref-zhang2021deformable">Zhang et al.. (2021). "Deformable linear object prediction using locally linear latent dynamics". <em>2021 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-zhang2024harnessing">Zhang et al.. (2024). "Harnessing with Twisting: Single-Arm Deformable Linear Object Manipulation for Industrial Harnessing Task". <em>2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-zhang2025particlegrid">Zhang et al.. (2025). "Particle-Grid neural dynamics for learning deformable object models from {RGB-D} videos". <em>Proceedings of Robotics: Science and Systems (RSS)</em>.</p>
+<p class="reference-entry" id="ref-zhang2024closed">Zhang et al.. (2024). "A closed-loop bin picking system for entangled wire harnesses using bimanual and dynamic manipulation". <em>Robotics and Computer-Integrated Manufacturing</em>. vol. 86, pp. 102670.</p>
+<p class="reference-entry" id="ref-zhang2024adaptigraph">Zhang et al.. (2024). "AdaptiGraph: Material-Adaptive Graph-Based Neural Dynamics for Robotic Manipulation". <em>Proceedings of Robotics: Science and Systems (RSS)</em>.</p>
+<p class="reference-entry" id="ref-zhang2022learning">Zhang et al.. (2022). "Learning efficient policies for picking entangled wire harnesses: An approach to industrial bin picking". <em>IEEE Robotics and Automation Letters</em>. vol. 8, pp. 73–80.</p>
+<p class="reference-entry" id="ref-zhao2024aloha">Zhao et al.. (2025). "{ALOHA} unleashed: A simple recipe for robot dexterity". <em>Conference on Robot Learning</em>.</p>
+<p class="reference-entry" id="ref-zhaole2024dexdlo">Zhaole et al.. (2024). "Dexdlo: Learning goal-conditioned dexterous policy for dynamic manipulation of deformable linear objects". <em>2024 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-zhi2024non">Zhi et al.. (2024). "Non-Prehensile Object Transport by Nonholonomic Robots Connected by Linear Deformable Elements". <em>IEEE Robotics and Automation Letters</em>. vol. 9, pp. 8651-8658.</p>
+<p class="reference-entry" id="ref-zhou2024reactive">Zhou et al.. (2024). "Reactive human–robot collaborative manipulation of deformable linear objects using a new topological latent control model". <em>Robotics and Computer-Integrated Manufacturing</em>. vol. 88, pp. 102727.</p>
+<p class="reference-entry" id="ref-zhu2019robotic">Zhu et al.. (2019). "Robotic manipulation planning for shaping deformable linear objects with environmental contacts". <em>IEEE Robotics and Automation Letters</em>. vol. 5, pp. 16–23.</p>
+<p class="reference-entry" id="ref-zhu2022challenges">Zhu et al.. (2022). "Challenges and outlook in robotic manipulation of deformable objects". <em>IEEE Robotics \& Automation Magazine</em>. vol. 29, pp. 67–77.</p>
+<p class="reference-entry" id="ref-zhu2018dual">Zhu et al.. (2018). "Dual-arm robotic manipulation of flexible cables". <em>2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>.</p>
+<p class="reference-entry" id="ref-zimmermann2021dynamic">Zimmermann et al.. (2021). "Dynamic manipulation of deformable objects with implicit integration". <em>IEEE Robotics and Automation Letters</em>. vol. 6, pp. 4209–4216.</p>
+<p class="reference-entry" id="ref-zitkovich2023rt2">Zitkovich et al.. (2023). "Rt-2: Vision-language-action models transfer web knowledge to robotic control". <em>Conference on Robot Learning (CoRL)</em>.</p>
+<p class="reference-entry" id="ref-zurn2023topology">Zürn et al.. (2023). "Topology matching of branched deformable linear objects". <em>2023 IEEE International Conference on Robotics and Automation (ICRA)</em>.</p>
+<p class="reference-entry" id="ref-zurn2023deep">Zürn et al.. (2023). "Deep Learning-Based Instance Segmentation for Feature Extraction of Branched Deformable Linear Objects for Robotic Manipulation". <em>2023 IEEE 19th International Conference on Automation Science and Engineering (CASE)</em>.</p>
+<p class="reference-entry" id="ref-zuern2022localization">Zürn et al.. (2022). "Localization and Tracking of Deformable Linear Objects with Self Organizing Maps". <em>ISR Europe 2022; 54th International Symposium on Robotics</em>.</p>
+</div>
+            </section>
+        
+
+        <!-- Prev / Next navigation -->
+        <div class="page-nav">
+            <a href="section-7-sec-conclusions.html" class="nav-btn prev-btn">← 7. Conclusions</a>
+            
+        </div>
+    </main>
+</div>
+
+<!-- Back to top button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
